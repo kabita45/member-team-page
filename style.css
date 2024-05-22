@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: hsl(287, 71%, 66%);
+}
+
+body {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+p {
+    font-size: clamp(12px, 3vw, 16px);
+}
+
+span {
+    font-size: clamp(10px, 2vw, 16px);
+}
+
+header {
+    margin-top: 4rem;
+    h1 {
+        font-weight: 400;
+        background-color: var(--bg-color);
+        font-size: clamp(17px, 3vw, 22px);
+        color: #fff;
+        padding: 8px 32px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    p:nth-child(2) {
+        text-align: center;
+        margin-block: 20px;
+    }
+
+    p:nth-child(3) {
+        font-weight: 600;
+        text-align: center;
+        color: var(--bg-color);
+    }
+}
+
+main {
+    h2 {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 500;
+    }
+}
+
+.team-main {
+    #team-heading {
+        background-color: var(--bg-color);
+        width: fit-content;
+        margin: 0 auto;
+        color: #fff;
+        padding: 4px 20px;
+        margin-block: 35px;
+        border-radius: 8px;
+        text-align: center;
+    }
+}
+
+.team-head {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .sales {
+        position: absolute;
+        right: 0;
+    }
+
+    .dev {
+        position: absolute;
+        left: 0;
+    }
+
+    .dev-team {
+        position: relative;
+        width: 130px;
+        height: 70px;
+        background-color: var(--bg-color);
+        border-radius: 5px;
+
+        &::before {
+            position: absolute;
+            right: -33px;
+            top: -5px;
+            content: "";
+            background-color: #fff;
+            rotate: 43deg;
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    .sales-team {
+        position: relative;
+        width: 140px;
+        height: 70px;
+        background-color: var(--bg-color);
+        border-radius: 5px;
+
+        &::before {
+            position: absolute;
+            right: 76px;
+            top: -5px;
+            content: "";
+            background-color: #fff;
+            rotate: 43deg;
+            height: 80px;
+            width: 80px;
+        }
+    }
+}
+
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+
+        img {
+            margin-bottom: 10px;
+            max-width: 100%;
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        p {
+            font-weight: 500;
+        }
+
+        span {
+            color: var(--bg-color);
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .team-main {
+        #team-heading {
+            position: relative;
+            z-index: 5;
+            margin-block: 20px;
+        }
+    }
+
+    .team-head {
+        .dev-team {
+            height: 50px;
+            width: 65px;
+
+            &::before {
+                right: -30px;
+                top: 0;
+                content: "";
+                rotate: 43deg;
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        .sales-team {
+            height: 50px;
+            width: 65px;
+
+            &::before {
+                right: 40px;
+                top: 0;
+                content: "";
+                rotate: 43deg;
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+}
